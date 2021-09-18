@@ -11,18 +11,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <header class="header">
-        <h1 class="header__heading--main">Guessing Color Game</h1>
+        <h1 class="header__heading--main animate__animated animate__fadeIn">Guessing Color Game</h1>
         <div class="header__heading--data">LOREM<div>
     </header>
+
     <nav class="menu">
-        <button class="btn btn--full-borderless">New Game</button>
-        <button class="btn btn--full-borderless">LOREM</button>
-        <button class="btn btn--full-borderless">Easy</button>
-        <button class="btn btn--full-borderless">Hard</button>
+        <div class="menu__container">
+            <button class="btn btn--full-borderless">New Game</button>
+            <button class="btn btn--full-borderless">LOREM</button>
+            <div class="btn__container--double">
+                <button class="btn btn--full-borderless">Easy</button>
+                <button class="btn btn--full-borderless">Hard</button>
+            </div>
+        </div>
     </nav>
+
     <main class="container">
         <div class="container__square--round-border" id="square-one"></div>
         <div class="container__square--round-border" id="square-two"></div>
@@ -31,10 +38,9 @@
         <div class="container__square--round-border" id="square-five"></div>
         <div class="container__square--round-border" id="square-six"></div>
     </main>
+
     <footer class="footer">
-        <div class="footer__author">
-            <a href="https://github.com/diego-rg">diego-rg</a>
-        </div>
+        <a class="footer__author" href="https://github.com/diego-rg">diego-rg</a>
     </footer>
 
     <script src="app.js"></script>
