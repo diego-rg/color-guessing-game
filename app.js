@@ -63,3 +63,37 @@ const checkAnswer = () => {
 };
 
 checkAnswer();
+
+
+//Level hard button
+const changeHard = () => {
+    levelHard.classList.add("selected-level");
+    levelEasy.classList.remove("selected-level");
+    if (colorsData.length === 3) {
+         colorsData.push("rgb(139, 163, 123)", "rgb(139, 163, 123)", "rgb(139, 163, 123)");
+    }
+    colorSquare[3].style.display = "initial";
+    colorSquare[4].style.display = "initial";
+    colorSquare[5].style.display = "initial";
+};
+
+levelHard.addEventListener("click", function() {
+    generateColors();
+    changeHard();
+});
+
+
+//Level easy button
+const changeEasy = () => {
+    levelEasy.classList.add("selected-level");
+    levelHard.classList.remove("selected-level");
+    colorsData.splice(3, 3);
+    colorSquare[3].style.display = "none";
+    colorSquare[4].style.display = "none";
+    colorSquare[5].style.display = "none";
+};
+
+levelEasy.addEventListener("click", function() {
+    generateColors();
+    changeEasy();
+});

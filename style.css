@@ -67,10 +67,20 @@ body {
     cursor: pointer
 }
 
+#btn--score {
+    color: #4682b4;
+    font-size: 1.35rem;
+}
+
 #btn--score:hover {
     background-color: white;
     color: black;
     cursor: default;
+}
+
+.selected-level {
+    background-color: #4682b4;
+    color: white;
 }
 
 .container {
