@@ -12,7 +12,7 @@ const levelHard = document.querySelector("#btn--hard-level");
 const colorSquare = document.querySelectorAll(".container__square--round-border");
 
 
-//Create the array with starting data
+//Create the array with starting data to store our possible answers data
 const colorsData = ["rgb(139, 163, 123)",
                     "rgb(139, 163, 123)",
                     "rgb(139, 163, 123)",
@@ -23,6 +23,7 @@ const colorsData = ["rgb(139, 163, 123)",
 
 
 //Function that generates random colors in the array and applies them to the squares background
+//The last part resets the score and creates the target/win condition
 const generateColors = () => {
     for (let i=0; i<colorsData.length; i++) {
         const rgb1 = Math.floor(Math.random() * 255);
@@ -45,6 +46,7 @@ newGame.addEventListener("click", generateColors);
 
 
 //Check if the answer is correct
+//It also makes the wrong answer/square disappear or, when the answer is correct, changes their color
 const checkAnswer = () => {
     for (let i=0; i<colorsData.length; i++) {
         colorSquare[i].addEventListener("click", function(){
@@ -66,6 +68,7 @@ checkAnswer();
 
 
 //Level hard button
+//Sets the array length back to 6 and makes the squares visible
 const changeHard = () => {
     levelHard.classList.add("selected-level");
     levelEasy.classList.remove("selected-level");
@@ -78,12 +81,13 @@ const changeHard = () => {
 };
 
 levelHard.addEventListener("click", function() {
-    generateColors();
     changeHard();
+    generateColors();
 });
 
 
 //Level easy button
+//Sets the array length to 3 and makes the last 3 squares disappear
 const changeEasy = () => {
     levelEasy.classList.add("selected-level");
     levelHard.classList.remove("selected-level");
@@ -94,6 +98,9 @@ const changeEasy = () => {
 };
 
 levelEasy.addEventListener("click", function() {
-    generateColors();
     changeEasy();
+    generateColors();
 });
+
+//Order of functions changed: it should first set the difficulty level (3 or 6 squares) and then generate the colors
+//Otherwise, the Easy level will have a bug: the corrent answer could be in a hidden square
