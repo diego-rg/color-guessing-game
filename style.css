@@ -67,6 +67,12 @@ body {
     cursor: pointer
 }
 
+#btn--score:hover {
+    background-color: white;
+    color: black;
+    cursor: default;
+}
+
 .container {
     margin: auto;
     height: 50%;
