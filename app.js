@@ -26,9 +26,9 @@ const colorsData = ["rgb(139, 163, 123)",
 //The last part resets the score and creates the target/win condition
 const generateColors = () => {
     for (let i=0; i<colorsData.length; i++) {
-        const rgb1 = Math.floor(Math.random() * 255);
-        const rgb2 = Math.floor(Math.random() * 255);
-        const rgb3 = Math.floor(Math.random() * 255);
+        const rgb1 = Math.floor(Math.random() * 256);
+        const rgb2 = Math.floor(Math.random() * 256);
+        const rgb3 = Math.floor(Math.random() * 256);
         const randromColor = `rgb(${rgb1}, ${rgb2}, ${rgb3})`;
         colorsData[i] = randromColor;
         colorSquare[i].style.backgroundColor = randromColor;
